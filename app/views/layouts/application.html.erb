@@ -10,6 +10,27 @@
   </head>
 
   <body>
+    <header>
+      <h1>Goal Tracker!</h1>
+
+      <% if @current_user %>
+
+      <a href="/session/new">Login!</a>
+      <a href="/users/new">Signup</a>
+
+      <% else %>
+        <form class="" action="session" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+
+          <input type="submit" name="" value="Logout!">
+        </form>
+        <% end %>
+
+
+    </header>
+
+
     <%= yield %>
   </body>
 </html>
