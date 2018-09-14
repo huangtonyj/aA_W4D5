@@ -13,13 +13,13 @@
     <header>
       <h1>Goal Tracker!</h1>
 
-      <% if @current_user %>
+      <% if !current_user %>
 
       <a href="/session/new">Login!</a>
       <a href="/users/new">Signup</a>
 
       <% else %>
-        <form class="" action="session" method="post">
+        <form class="" action=" <%= session_url %>" method="post">
           <input type="hidden" name="_method" value="delete">
           <input type="hidden" name="authenticity_token" value="form_authenticity_token">
 
